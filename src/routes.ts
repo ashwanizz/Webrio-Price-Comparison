@@ -29,5 +29,5 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: "/Webrio-Price-Comparison/"
+  basename: import.meta.env.BASE_URL
 });

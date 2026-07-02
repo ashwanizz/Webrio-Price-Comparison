@@ -16,7 +16,7 @@ function figmaAssetResolver() {
   }
 }
 
-  export default defineConfig({
+  export default defineConfig(({ command }) => ({
     plugins: [react(), tailwindcss(), figmaAssetResolver()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -62,7 +62,7 @@ function figmaAssetResolver() {
         '@': path.resolve(__dirname, './src'),
       },
     },
-    base: '/Webrio-Price-Comparison/',
+    base: command === 'build' ? '/Webrio-Price-Comparison/' : '/',
     build: {
       target: 'esnext',
       outDir: 'build',
@@ -71,4 +71,4 @@ function figmaAssetResolver() {
       port: 3000,
       open: true,
     },
-  });
+  }));
