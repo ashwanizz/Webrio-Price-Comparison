@@ -1,6 +1,7 @@
 {
   "name": "Webrio",
   "version": "0.1.0",
+  "homepage": "https://ashwanizz.github.io/Webrio-Price-Comparison/",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -56,11 +57,14 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
