@@ -1,11 +1,12 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router";
+import { useOutlet, useLocation } from "react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { Navbar } from "../components/webrio/Navbar";
 import { Footer } from "../components/webrio/Footer";
 
 export const RootLayout = () => {
   const location = useLocation();
+  const outlet = useOutlet();
   
   // Scroll to top on route change
   React.useEffect(() => {
@@ -23,7 +24,7 @@ export const RootLayout = () => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          <Outlet />
+          {outlet}
         </motion.div>
       </AnimatePresence>
       <Footer />
